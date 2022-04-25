@@ -9,13 +9,21 @@ export class ArticuloserService {
   constructor(private httpclient:HttpClient) { }
   
   getArt(){
-    return this.httpclient.get('https://unico.jacs3dpruebas.shop/api/articulos');
+    return this.httpclient.get('http://127.0.0.1:8000/api/articulos');
   }
-
+/*    
+  getArt(){
+    return this.httpclient.get('https://unico.jacs3dpruebas.shop/api/articulos');
+  }*/
+  
+  getArticuloById(id:any){
+    return this.httpclient.get('http://127.0.0.1:8000/api/articulos/' + id);
+    
+/*
   getArticuloById(id:any){
     return this.httpclient.get('https://unico.jacs3dpruebas.shop/api/articulos/' + id);
-  }
-
+  }*/
+  
   insertArt(data : any){
     return this.httpclient.post('http://127.0.0.1:8000/api/articulos', data);
   }
